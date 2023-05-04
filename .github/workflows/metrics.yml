@@ -19,7 +19,7 @@ jobs:
           token: ${{secrets.METRICS_TOKEN}}
           committer_token: ${{secrets.GITHUB_TOKEN}}
 
-          repositories_affiliations: collaborator
+          repositories_affiliations: owner,collaborator
           repositories_skipped: msrd0/docs
 
           config_timezone: Europe/Amsterdam
