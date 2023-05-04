@@ -28,8 +28,28 @@ jobs:
 
           plugin_languages: yes
           plugin_languages_details: percentage
-          plugin_languages_limit: 5
+          plugin_languages_limit: 6
 
           plugin_habits: yes
+          plugin_habits_from: 1000
+          plugin_habits_days: 30
           plugin_habits_facts: yes
           plugin_habits_charts: no
+
+          extras_css: |
+            @media (prefers-color-scheme: dark) {
+              h1, h2, h3 {
+                color: #284a92;
+              }
+            }
+          extras_js: |
+            for (const {a, b} of [
+              {a:"#216e39", b:"45%"},
+              {a:"#30a14e", b:"35%"},
+              {a:"#40c463", b:"25%"},
+              {a:"#9be9a8", b:"20%"},
+              {a:"#ebedf0", b:"15%"},
+            ]) {
+              document.querySelectorAll(`svg g [fill="${a}"]`)
+                .forEach(node => node.setAttribute("fill", `hsl(120deg 100% ${b})`));
+            }
