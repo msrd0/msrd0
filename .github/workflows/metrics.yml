@@ -39,17 +39,17 @@ jobs:
           extras_css: |
             @media (prefers-color-scheme: dark) {
               h1, h2, h3 {
-                color: #284a92;
+                color: #284a92 !important;
               }
             }
           extras_js: |
             for (const {a, b} of [
-              {a:"#216e39", b:"45%"},
-              {a:"#30a14e", b:"35%"},
-              {a:"#40c463", b:"25%"},
-              {a:"#9be9a8", b:"20%"},
-              {a:"#ebedf0", b:"15%"},
+              {a:"#216e39", b:1},
+              {a:"#30a14e", b:0.8},
+              {a:"#40c463", b:0.6},
+              {a:"#9be9a8", b:0.4},
+              {a:"#ebedf0", b:0.2},
             ]) {
               document.querySelectorAll(`svg g [fill="${a}"]`)
-                .forEach(node => node.setAttribute("fill", `hsl(120deg 100% ${b})`));
+                .forEach(node => node.setAttribute("fill", `hsl(120deg 100% 45% / ${b})`));
             }
